@@ -5,7 +5,7 @@ import TodoItem, { Task } from '../components/todo-item';
 const todoUrl = 'http://localhost:8081/tasks';
 async function getTasksList() {
 	const response = await fetch(todoUrl, {
-		next: { revalidate: 0 },
+		next: { revalidate: 0 }, // To avoid any cache
 	});
 	return response.json();
 }
